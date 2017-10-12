@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Tools\FileManager\BaseManager;
 use App\Tools\FileManager\UpyunManager;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+		// Laravel 5.5  1071 Specified key was too long; max key length is 767 bytes
+		Schema::defaultStringLength(191);
+		
         $lang = config('app.locale') != 'zh_cn' ? config('app.locale') : 'zh';
         \Carbon\Carbon::setLocale($lang);
 

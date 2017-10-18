@@ -1,3 +1,4 @@
+
 window.$ = window.jQuery = require('jquery');
 window.swal = require('sweetalert');
 window.Vue = require('vue');

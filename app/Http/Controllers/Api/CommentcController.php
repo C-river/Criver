@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CommentRequest;
 use App\Repositories\CommentRepository;
 use App\Notifications\ReceivedComment as Received;
+use Log;
 
-class CommentController extends ApiController
+class CommentcController extends ApiController
 {
     protected $comment;
 
@@ -26,7 +27,10 @@ class CommentController extends ApiController
      */
     public function index()
     {
-        return $this->response->collection($this->comment->page());
+		$rets = $this->comment->page();
+		//Log::info('commentc', $rets->toArray());
+        return $this->response->collection($rets);
+		
     }
 
     /**

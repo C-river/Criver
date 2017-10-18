@@ -19,8 +19,7 @@ import FooterBar from 'components/dashboard/particals/FooterBar.vue';
 export default {
     components: {
         Sidebar,
-        Navbar,
-        FooterBar
+        Navbar
     },
     computed: {
         isToggle () {

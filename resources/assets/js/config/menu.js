@@ -24,6 +24,11 @@ export default [
         icon : 'ion-chatbubble-working',
         uri  : '/dashboard/comments'
     },
+	{
+        label: 'sidebar.comment',
+        icon : 'ion-hammer',
+        uri  : '/dashboard/commentsc'
+	},
     {
         label: 'sidebar.file',
         icon : 'ion-ios-folder',

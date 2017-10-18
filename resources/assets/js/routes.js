@@ -13,7 +13,13 @@ export default [
             },
             {
                 path: 'home',
-                component: () => import('dashboard/Home.vue'),
+				component: Parent,
+				children: [
+				  {
+				    path: '/',
+				    component: () => import('dashboard/Home.vue')	
+				  }
+				]
             },
             {
                 path: 'users',
@@ -72,7 +78,7 @@ export default [
             },
             {
                 path: 'comments',
-                component: Parent,
+				component: Parent,
                 children: [
                     {
                         path: '/',
@@ -84,6 +90,20 @@ export default [
                     }
                 ]
             },
+			{
+				path: 'commentsc',
+				component: Parent,
+				children: [
+				  {
+					  path: '/',
+					  component: () => import('dashboard/commentc/Comment.vue')
+				  },
+				  {
+					  path: ':id/edit',
+					  component: () => import('dashboard/commentc/Edit.vue')
+				  }
+				]
+			},
             {
                 path: 'tags',
                 component: Parent,

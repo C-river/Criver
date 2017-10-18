@@ -25,6 +25,7 @@ Route::group([
     Route::post('/discussion/{id}/status', 'DiscussionController@status');
 
     Route::resource('comment', 'CommentController', ['except' => ['create']]);
+	Route::resource('commentc', 'CommentcController', ['except' => ['create']]);
 
     Route::resource('tag', 'TagController', ['except' => ['create', 'show']]);
     Route::post('/tag/{id}/status', 'TagController@status');
@@ -57,4 +58,8 @@ Route::group([
     Route::delete('comments/{id}', 'CommentController@destroy')->middleware('auth:api');
     Route::post('comments/vote/{type}', 'MeController@postVoteComment')->middleware('auth:api');
     Route::get('tags', 'TagController@getList');
+	
+	// Commentc
+	Route::post('commentsc', 'CommentcController@store')->middleware('auth:api');
+    Route::delete('commentsc/{id}', 'CommentcController@destroy')->middleware('auth:api');
 });

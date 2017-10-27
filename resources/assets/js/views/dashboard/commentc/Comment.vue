@@ -46,7 +46,7 @@ export default {
 	  if (action == 'edit-item') {
 	    this.$router.push('/dashboard/commentsc/' + data.id + '/edit')
 	  } else if (action == 'delete-item') {
-	    this.$router.delete('commentc/' + data.id)
+	    this.$http.delete('commentsc/' + data.id)
 		  .then((response) => {
 		    toastr.success('You delete the comment success!')
 			

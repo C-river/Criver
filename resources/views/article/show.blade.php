@@ -31,8 +31,8 @@
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {!! config('blog.license') !!}
                 </div>
-                @endif
-                @if(config('blog.social_share.article_share'))
+            @endif
+            @if(config('blog.social_share.article_share'))
                 <div class="footing">
                     <div class="social-share"
                         data-title="{{ $article->title }}"
@@ -41,7 +41,7 @@
                         {{ config('blog.social_share.mobile_sites') ? "data-mobile-sites=" . config('blog.social_share.mobile_sites') : '' }}
                         initialized></div>
                 </div>
-                @endif
+            @endif
             </div>
         </div>
     </div>
@@ -63,6 +63,6 @@
 
 @section('scripts')
     <script>
-        hljs.initHighlightingOnLoad();
+        //hljs.initHighlightingOnLoad();
     </script>
 @endsection

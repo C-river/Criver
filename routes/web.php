@@ -28,6 +28,8 @@ Route::group(['prefix' => 'user'], function () {
         Route::post('follow/{id}', 'UserController@doFollow');
         Route::get('notification', 'UserController@notifications');
         Route::post('notification', 'UserController@markAsRead');
+		
+		Route::get('invoice', 'UserController@notifications');
     });
 
     Route::group(['prefix' => '{username}'], function () {
